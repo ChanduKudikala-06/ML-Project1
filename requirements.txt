@@ -1,6 +1,5 @@
 pandas
 numpy
 seaborn
-sklearn
 
 #-e . # it will initalize setup.py and install dependencies
