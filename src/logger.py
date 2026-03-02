@@ -3,9 +3,13 @@ import os
 
 from datetime import datetime
 
-LOG_FILE=f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+#creating dynamic log file
+#datetime-> gets current date & time
+#strftime->formats it into string
+LOG_FILE=f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log" 
 
-logs_path=os.path.join(os.getcwd(),"logs",LOG_FILE)
+#os.getcwd->gets current working directory ex:-D:\Projects\ML Project1
+logs_path=os.path.join(os.getcwd(),"logs")
 
 os.makedirs(logs_path,exist_ok=True)
 
@@ -18,5 +22,5 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-'''if __name__=="__main__":
-    logging.info("Logging has Started")'''
+if __name__=="__main__":
+    logging.info("Logging has Started")
