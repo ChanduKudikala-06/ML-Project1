@@ -1,5 +1,9 @@
 pandas
 numpy
 seaborn
-
+matplotlib
+scikit-learn
+catboost
+xgboost
+dill #for making pickle file
 #-e . # it will initalize setup.py and install dependencies
