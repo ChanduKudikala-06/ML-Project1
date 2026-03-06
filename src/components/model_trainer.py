@@ -81,7 +81,6 @@ class ModelTrainer:
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,
                 obj=best_model
-
             )
 
             predicted=best_model.predict(X_test)

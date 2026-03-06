@@ -35,7 +35,7 @@ def predict_datapoint():
     
     #Post Condition->When User submits the form
     #when user submits form dynamically url will generate by using this function so url will be /predictdata
-    # <form action="{{ url_for('predict_datapoint')}}" method="post">
+    #<form action="{{ url_for('predict_datapoint')}}" method="post">
     else:
         data=CustomData(
             gender=request.form.get('gender'),
@@ -53,9 +53,12 @@ def predict_datapoint():
 
         predict_pipeline=PredictPipeline()
         results=predict_pipeline.predict(pred_df)
-
+        
+        #Flask sends data to template and jinja processes the template 
+        #Jinja engine reads the HTML file and replaces variable using {{}} in html
         return render_template('home.html',results=results[0])
     
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0", port=8080,debug=True)
+    app.run(host="0.0.0.0", port=8080)
+    #While deploting remove this debug=True
